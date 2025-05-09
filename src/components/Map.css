@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.map-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.road-details-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 280px;
+  height: 100%;
+  background-color: white;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: none;
+  font-size: 20px;
+  color: #666;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+  z-index: 1001;
+}
+
+.close-button:hover {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.road-details-panel h2 {
+  padding-left: 30px;
+  color: #2563eb;
+  margin-bottom: 15px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #e5e7eb;
+  font-size: 1.2em;
+}
+
+.road-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.road-info h3 {
+  color: #1e40af;
+  margin-bottom: 15px;
+}
+
+.info-group {
+  background-color: #f8fafc;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+}
+
+.info-group h4 {
+  color: #1e40af;
+  margin-bottom: 6px;
+  font-size: 0.95em;
+}
+
+.info-group p {
+  margin: 3px 0;
+  color: #4b5563;
+  font-size: 0.9em;
+}
+
+/* Scrollbar styling */
+.road-details-panel::-webkit-scrollbar {
+  width: 6px;
+}
+
+.road-details-panel::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.road-details-panel::-webkit-scrollbar-thumb {
+  background: #2563eb;
+  border-radius: 3px;
+}
+
+.road-details-panel::-webkit-scrollbar-thumb:hover {
+  background: #1e40af;
+}
+
+.road-id-tooltip {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 3px 6px;
+  border-radius: 3px;
+  font-size: 12px;
+  pointer-events: none;
+  z-index: 1000;
+  white-space: nowrap;
+  transform: translate(-50%, 0);
+  margin-top: 5px;
+} 

@@ -1,0 +1,576 @@
+{
+"type": "FeatureCollection",
+"name": "mirpur_60ft",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+    {
+        "type": "Feature",
+        "properties": {
+          "id": "road_001",
+          "road_width": {"actual": 6.5, "effective": 6.3, "type": "rigid"},
+          "footpath_width": { "actual": 2.0, "effective": 1.8 },
+          "street_lights": { "actual": 10, "functional": 9 },
+          "drainage": { "present": true, "type": "u-drain" },
+          "street_vendor": 0,
+          "vendor_active_time": null,
+          "waste_management": true,
+          "floating_population": true
+        },
+        "geometry": {
+          "type": "MultiLineString",
+          "coordinates": [
+            [
+              [90.363195257228597, 23.798398294965274],
+              [90.363338129353863, 23.798423087416083],
+              [90.364079586418029, 23.798698057916951]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "road_002",
+          "road_width": {"actual": 6.5, "effective": 6.3, "type": "rigid"},
+          "footpath_width": "none",
+          "street_lights": "none",
+          "drainage": { "present": true, "type": "saucer drain" },
+          "street_vendor": 2,
+          "vendor_active_time": "09:00-17:00",
+          "waste_management": false,
+          "floating_population": true
+        },
+        "geometry": {
+          "type": "MultiLineString",
+          "coordinates": [
+            [
+              [90.363195257228597, 23.798398294965274],
+              [90.363271443627525, 23.798109716028272],
+              [90.363366024739065, 23.79810911506187],
+              [90.363437617386012, 23.797848295381325],
+              [90.363454694531157, 23.797678822405008]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "road_003",
+          "road_width": {"actual": 6.5, "effective": 6.3, "type": "rigid"},
+          "footpath_width": { "actual": 1.5, "effective": 1.2 },
+          "street_lights": { "actual": 15, "functional": 15 },
+          "drainage": { "present": true, "type": "both" },
+          "street_vendor": 5,
+          "vendor_active_time": "07:00-19:00",
+          "waste_management": true,
+          "floating_population": true
+        },
+        "geometry": {
+          "type": "MultiLineString",
+          "coordinates": [
+            [
+              [90.363157814931029, 23.797694447582291],
+              [90.363454694531157, 23.797678822405008],
+              [90.363663561152521, 23.79766920691036],
+              [90.36369377456316, 23.797723294058482],
+              [90.363994595042954, 23.79766620206815],
+              [90.364321688053792, 23.797637956547856],
+              [90.364537779621159, 23.797676418531431],
+              [90.364708551072582, 23.797747933751847]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "road_004",
+          "road_width": {"actual": 6.5, "effective": 6.3, "type": "rigid"},
+          "footpath_width": { "actual": 2.5, "effective": 2.0 },
+          "street_lights": { "actual": 8, "functional": 6 },
+          "drainage": { "present": false, "type": null },
+          "street_vendor": 0,
+          "vendor_active_time": null,
+          "waste_management": true,
+          "floating_population": false
+        },
+        "geometry": {
+          "type": "MultiLineString",
+          "coordinates": [
+            [
+              [90.363157814931029, 23.797694447582291],
+              [90.363198537354052, 23.797512354053499],
+              [90.363221525818673, 23.797479901714642],
+              [90.363269473187728, 23.797448050337135],
+              [90.363451410464876, 23.797199248742256],
+              [90.363500014647187, 23.797110305061324],
+              [90.363588027625994, 23.796934821404164],
+              [90.363647140820703, 23.796799602671037],
+              [90.363655022580005, 23.796732293738103]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "road_005",
+          "road_width": {"actual": 6.5, "effective": 6.3, "type": "rigid"},
+          "footpath_width": "none",
+          "street_lights": { "actual": 5, "functional": 4 },
+          "drainage": { "present": true, "type": "manhole" },
+          "street_vendor": 3,
+          "vendor_active_time": "10:00-15:00",
+          "waste_management": false,
+          "floating_population": true
+        },
+        "geometry": {
+          "type": "MultiLineString",
+          "coordinates": [
+            [
+              [90.363655022580005, 23.796732293738103],
+              [90.363887534479275, 23.79675272681072],
+              [90.364146975722804, 23.796810420174879],
+              [90.364430719057466, 23.79689335434098],
+              [90.364584413363715, 23.796973884567546],
+              [90.364766350640792, 23.797163791471355],
+              [90.364837943287725, 23.797216676888823],
+              [90.364979814955092, 23.797217277859357]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "road_006",
+          "road_width": {"actual": 6.5, "effective": 6.3, "type": "rigid"},
+          "footpath_width": { "actual": 1.0, "effective": 0.8 },
+          "street_lights": "none",
+          "drainage": { "present": true, "type": "saucer drain" },
+          "street_vendor": 1,
+          "vendor_active_time": "08:00-12:00",
+          "waste_management": true,
+          "floating_population": false
+        },
+        "geometry": {
+          "type": "MultiLineString",
+          "coordinates": [
+            [
+              [90.364837943287725, 23.797216676888823],
+              [90.36469147392755, 23.797400573741097],
+              [90.364431375870751, 23.797365717494973],
+              [90.364194923091873, 23.797312832138172]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "road_007",
+          "road_width": {"actual": 6.5, "effective": 6.3, "type": "rigid"},
+          "footpath_width": { "actual": 2.2, "effective": 1.9 },
+          "street_lights": { "actual": 20, "functional": 19 },
+          "drainage": { "present": true, "type": "u-drain" },
+          "street_vendor": 4,
+          "vendor_active_time": "06:00-22:00",
+          "waste_management": true,
+          "floating_population": true
+        },
+        "geometry": {
+          "type": "MultiLineString",
+          "coordinates": [
+            [
+              [90.363883125047181, 23.798625199969905],
+              [90.363933511408547, 23.798505151317638],
+              [90.363997222296192, 23.798428828794734],
+              [90.364223166062715, 23.798251544021262],
+              [90.364332853879574, 23.798112720860274],
+              [90.364451080269021, 23.797886156335206],
+              [90.364537779621159, 23.797676418531431]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "road_008",
+          "road_width": {"actual": 6.5, "effective": 6.3, "type": "rigid"},
+          "footpath_width": "none",
+          "street_lights": "none",
+          "drainage": { "present": false, "type": null },
+          "street_vendor": 2,
+          "vendor_active_time": "09:00-18:00",
+          "waste_management": false,
+          "floating_population": false
+        },
+        "geometry": {
+          "type": "MultiLineString",
+          "coordinates": [
+            [
+              [90.363538571272684, 23.797033429409883],
+              [90.3638528875791, 23.797108652391017]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "road_009",
+          "road_width": {"actual": 6.5, "effective": 6.3, "type": "rigid"},
+          "footpath_width": { "actual": 1.8, "effective": 1.6 },
+          "street_lights": { "actual": 7, "functional": 7 },
+          "drainage": { "present": true, "type": "manhole" },
+          "street_vendor": 0,
+          "vendor_active_time": null,
+          "waste_management": true,
+          "floating_population": true
+        },
+        "geometry": {
+          "type": "MultiLineString",
+          "coordinates": [
+            [
+              [90.363718417334752, 23.798564117875618],
+              [90.363543528526691, 23.798988476174561]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "road_010",
+          "road_width": {"actual": 6.5, "effective": 6.3, "type": "rigid"},
+          "footpath_width": { "actual": 2.4, "effective": 2.2 },
+          "street_lights": { "actual": 12, "functional": 10 },
+          "drainage": { "present": true, "type": "both" },
+          "street_vendor": 3,
+          "vendor_active_time": "11:00-20:00",
+          "waste_management": true,
+          "floating_population": true
+        },
+        "geometry": {
+          "type": "MultiLineString",
+          "coordinates": [
+            [
+              [90.363857922108167, 23.79861585342524],
+              [90.363816106035699, 23.799011913703509],
+              [90.363879160110073, 23.79906720221658]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "road_011",
+          "road_width": {"actual": 6.5, "effective": 6.3, "type": "rigid"},
+          "footpath_width": "none",
+          "street_lights": { "actual": 10, "functional": 8 },
+          "drainage": { "present": true, "type": "u-drain" },
+          "street_vendor": 1,
+          "vendor_active_time": "14:00-19:00",
+          "waste_management": false,
+          "floating_population": true
+        },
+        "geometry": {
+          "type": "MultiLineString",
+          "coordinates": [
+            [
+              [90.363879160110073, 23.79906720221658],
+              [90.364079586418029, 23.798698057916951],
+              [90.364116926515493, 23.79862729730921],
+              [90.364203625867745, 23.798490277443658],
+              [90.364320538630636, 23.798349651641907],
+              [90.364708551072582, 23.797747933751847],
+              [90.364979814955092, 23.797217277859357]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "road_012",
+          "road_width": {"actual": 6.5, "effective": 6.3, "type": "rigid"},
+          "footpath_width": { "actual": 1.2, "effective": 1.0 },
+          "street_lights": { "actual": 4, "functional": 4 },
+          "drainage": { "present": false, "type": null },
+          "street_vendor": 0,
+          "vendor_active_time": null,
+          "waste_management": true,
+          "floating_population": false
+        },
+        "geometry": {
+          "type": "MultiLineString",
+          "coordinates": [
+            [
+              [90.364156335311947, 23.798735470785211],
+              [90.36444401952626, 23.798867682689103],
+              [90.364834166611402, 23.799010711779061]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "road_013",
+          "road_width": {"actual": 6.5, "effective": 6.3, "type": "rigid"},
+          "footpath_width": { "actual": 2.5, "effective": 2.3 },
+          "street_lights": { "actual": 18, "functional": 17 },
+          "drainage": { "present": true, "type": "saucer drain" },
+          "street_vendor": 6,
+          "vendor_active_time": "07:30-21:00",
+          "waste_management": true,
+          "floating_population": true
+        },
+        "geometry": {
+          "type": "MultiLineString",
+          "coordinates": [
+            [
+              [90.364834166611402, 23.799010711779061],
+              [90.364944511241532, 23.798721047660283],
+              [90.364994429050412, 23.798695807187805],
+              [90.365119223572592, 23.798697009115177],
+              [90.365238763588593, 23.798760711249979],
+              [90.365580963304723, 23.798860471134187],
+              [90.365774066407482, 23.798897129867562]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "road_014",
+          "road_width": {"actual": 6.5, "effective": 6.3, "type": "rigid"},
+          "footpath_width": "none",
+          "street_lights": "none",
+          "drainage": { "present": true, "type": "manhole" },
+          "street_vendor": 0,
+          "vendor_active_time": null,
+          "waste_management": false,
+          "floating_population": false
+        },
+        "geometry": {
+          "type": "MultiLineString",
+          "coordinates": [
+            [
+              [90.365774066407482, 23.798897129867562],
+              [90.365810191137612, 23.798591840428056],
+              [90.365855511253542, 23.798572008608947],
+              [90.365877842904879, 23.798525734352577],
+              [90.365885724664167, 23.798176573523126],
+              [90.365915938074792, 23.797967437155265],
+              [90.365925133460621, 23.797879695935155]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "road_015",
+          "road_width": {"actual": 6.5, "effective": 6.3, "type": "rigid"},
+          "footpath_width": { "actual": 1.5, "effective": 1.4 },
+          "street_lights": { "actual": 6, "functional": 5 },
+          "drainage": { "present": true, "type": "both" },
+          "street_vendor": 2,
+          "vendor_active_time": "10:00-16:00",
+          "waste_management": true,
+          "floating_population": true
+        },
+        "geometry": {
+          "type": "MultiLineString",
+          "coordinates": [
+            [
+              [90.365915938074792, 23.797967437155265],
+              [90.366210190421853, 23.798020322245602]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "road_016",
+          "road_width": {"actual": 6.5, "effective": 6.3, "type": "rigid"},
+          "footpath_width": { "actual": 0.8, "effective": 0.7 },
+          "street_lights": { "actual": 3, "functional": 2 },
+          "drainage": { "present": false, "type": null },
+          "street_vendor": 1,
+          "vendor_active_time": "18:00-22:00",
+          "waste_management": false,
+          "floating_population": false
+        },
+        "geometry": {
+          "type": "MultiLineString",
+          "coordinates": [
+            [
+              [90.365925133460621, 23.797879695935155],
+              [90.36552053648343, 23.797781137233695]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "road_017",
+          "road_width": {"actual": 6.5, "effective": 6.3, "type": "rigid"},
+          "footpath_width": { "actual": 2.1, "effective": 1.9 },
+          "street_lights": { "actual": 14, "functional": 14 },
+          "drainage": { "present": true, "type": "u-drain" },
+          "street_vendor": 5,
+          "vendor_active_time": "09:00-17:00",
+          "waste_management": true,
+          "floating_population": true
+        },
+        "geometry": {
+          "type": "MultiLineString",
+          "coordinates": [
+            [
+              [90.36552053648343, 23.797781137233695],
+              [90.365498204832065, 23.797823204981277],
+              [90.36512776214515, 23.79771382880925],
+              [90.364893936619353, 23.797594837044997]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "road_018",
+          "road_width": {"actual": 6.5, "effective": 6.3, "type": "rigid"},
+          "footpath_width": "none",
+          "street_lights": "none",
+          "drainage": { "present": true, "type": "saucer drain" },
+          "street_vendor": 0,
+          "vendor_active_time": null,
+          "waste_management": true,
+          "floating_population": false
+        },
+        "geometry": {
+          "type": "MultiLineString",
+          "coordinates": [
+            [
+              [90.36552053648343, 23.797781137233695],
+              [90.365542868134753, 23.797684982330953],
+              [90.365486382193126, 23.797666953278764],
+              [90.365553377147137, 23.797442190884812],
+              [90.365569140665741, 23.797412142406955]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "road_019",
+          "road_width": {"actual": 6.5, "effective": 6.3, "type": "rigid"},
+          "footpath_width": { "actual": 1.4, "effective": 1.2 },
+          "street_lights": { "actual": 8, "functional": 7 },
+          "drainage": { "present": false, "type": null },
+          "street_vendor": 2,
+          "vendor_active_time": "08:00-14:00",
+          "waste_management": false,
+          "floating_population": true
+        },
+        "geometry": {
+          "type": "MultiLineString",
+          "coordinates": [
+            [
+              [90.365569140665741, 23.797412142406955],
+              [90.365368155803679, 23.797360459008782],
+              [90.36532480612756, 23.797392911377482],
+              [90.365185561713332, 23.797321996931689],
+              [90.365067335323872, 23.797263101854064]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "road_020",
+          "road_width": {"actual": 6.5, "effective": 6.3, "type": "rigid"},
+          "footpath_width": { "actual": 1.0, "effective": 0.9 },
+          "street_lights": { "actual": 5, "functional": 5 },
+          "drainage": { "present": true, "type": "manhole" },
+          "street_vendor": 3,
+          "vendor_active_time": "12:00-20:00",
+          "waste_management": true,
+          "floating_population": true
+        },
+        "geometry": {
+          "type": "MultiLineString",
+          "coordinates": [
+            [
+              [90.365885724664167, 23.798176573523126],
+              [90.365549436267472, 23.798181381251766],
+              [90.365324806127518, 23.798142919417696],
+              [90.36529721996996, 23.798171765794311],
+              [90.365096235107927, 23.798112871101903],
+              [90.364812491773264, 23.797973446825704]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "road_021",
+          "road_width": {"actual": 6.5, "effective": 6.3, "type": "rigid"},
+          "footpath_width": { "actual": 2.3, "effective": 2.1 },
+          "street_lights": { "actual": 20, "functional": 19 },
+          "drainage": { "present": true, "type": "both" },
+          "street_vendor": 7,
+          "vendor_active_time": "06:00-22:00",
+          "waste_management": true,
+          "floating_population": true
+        },
+        "geometry": {
+          "type": "MultiLineString",
+          "coordinates": [
+            [
+              [90.363953380009988, 23.799090038769499],
+              [90.364156335311947, 23.798735470785211],
+              [90.364327763576568, 23.798469844644348],
+              [90.364700833516565, 23.79792176365083],
+              [90.364893936619353, 23.797594837044997],
+              [90.365067335323872, 23.797263101854064]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "road_022",
+          "road_width": {"actual": 6.5, "effective": 6.3, "type": "rigid"},
+          "footpath_width": "none",
+          "street_lights": "none",
+          "drainage": { "present": false, "type": null },
+          "street_vendor": 1,
+          "vendor_active_time": "15:00-18:00",
+          "waste_management": false,
+          "floating_population": false
+        },
+        "geometry": {
+          "type": "MultiLineString",
+          "coordinates": [
+            [
+              [90.364327763576568, 23.798469844644348],
+              [90.364516268986392, 23.798567801859054]
+            ]
+          ]
+        }
+      }
+]
+}
