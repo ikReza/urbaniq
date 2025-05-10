@@ -13,7 +13,7 @@ const Map = () => {
 
   useEffect(() => {
     // Load the GeoJSON data
-    fetch('/urbaniq/mirpur_60ft.geojson')
+    fetch('/mirpur_60ft.geojson')
       .then(response => response.json())
       .then(data => setGeoData(data))
       .catch(error => console.error('Error loading GeoJSON:', error));
