@@ -8,22 +8,59 @@ const Map = () => {
   const [selectedRoad, setSelectedRoad] = useState(null);
   const [hoveredRoadId, setHoveredRoadId] = useState(null);
   const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
+  const [showFilters, setShowFilters] = useState(false);
+  const [activeFilter, setActiveFilter] = useState(null); // 'roadType' or 'wasteManagement'
 
   useEffect(() => {
     // Load the GeoJSON data
-    fetch('/mirpur_60ft.geojson')
+    fetch('/urbaniq/mirpur_60ft.geojson')
       .then(response => response.json())
       .then(data => setGeoData(data))
       .catch(error => console.error('Error loading GeoJSON:', error));
   }, []);
 
   // Enhanced style for the roads
-  const style = {
-    color: '#2563eb', // Brighter blue
-    weight: 4,        // Thicker lines
-    opacity: 0.9,     // More opaque
-    fillOpacity: 0.2, // Slight fill
-    fillColor: '#2563eb' // Fill color
+  const getStyle = (feature) => {
+    const baseStyle = {
+      weight: 4,
+      opacity: 0.9,
+      fillOpacity: 0.2,
+    };
+
+    if (activeFilter === 'wasteManagement') {
+      return {
+        ...baseStyle,
+        color: feature.properties.waste_management ? '#22c55e' : '#fecaca',
+        fillColor: feature.properties.waste_management ? '#22c55e' : '#fecaca'
+      };
+    }
+
+    if (activeFilter === 'roadType') {
+      return {
+        ...baseStyle,
+        color: feature.properties.road_width.type === 'flexible' ? '#FFD700' : '#22c55e',
+        fillColor: feature.properties.road_width.type === 'flexible' ? '#FFD700' : '#22c55e'
+      };
+    }
+
+    // Default color for all roads
+    return {
+      ...baseStyle,
+      color: '#2563eb',
+      fillColor: '#2563eb'
+    };
+  };
+
+  const handleFilterChange = (filterType) => {
+    setActiveFilter(activeFilter === filterType ? null : filterType);
+  };
+
+  const handleToggleFilters = () => {
+    if (showFilters) {
+      // If we're hiding filters, also reset the active filter
+      setActiveFilter(null);
+    }
+    setShowFilters(!showFilters);
   };
 
   const handleRoadClick = (feature) => {
@@ -35,18 +72,20 @@ const Map = () => {
   };
 
   const handleMouseOver = (feature, e) => {
-    setHoveredRoadId(feature.properties.id);
-    setTooltipPosition({
-      x: e.originalEvent.clientX,
-      y: e.originalEvent.clientY
-    });
-  };
-
-  const handleMouseMove = (e) => {
-    if (hoveredRoadId) {
+    if (e && e.originalEvent) {
+      setHoveredRoadId(feature.properties.id);
       setTooltipPosition({
         x: e.originalEvent.clientX,
         y: e.originalEvent.clientY
+      });
+    }
+  };
+
+  const handleMouseMove = (e) => {
+    if (hoveredRoadId && e && e.clientX && e.clientY) {
+      setTooltipPosition({
+        x: e.clientX,
+        y: e.clientY
       });
     }
   };
@@ -132,23 +171,91 @@ const Map = () => {
     );
   };
 
+  const renderRoadTypeLegend = () => {
+    if (activeFilter !== 'roadType') return null;
+    return (
+      <div className="legend-content">
+        <div className="legend-item">
+          <div className="color-box" style={{ backgroundColor: '#22c55e' }}></div>
+          <span>Rigid Roads</span>
+        </div>
+        <div className="legend-item">
+          <div className="color-box" style={{ backgroundColor: '#FFD700' }}></div>
+          <span>Flexible Roads</span>
+        </div>
+      </div>
+    );
+  };
+
+  const renderWasteManagementLegend = () => {
+    if (activeFilter !== 'wasteManagement') return null;
+    return (
+      <div className="legend-content">
+        <div className="legend-item">
+          <div className="color-box" style={{ backgroundColor: '#22c55e' }}></div>
+          <span>Waste Management Available</span>
+        </div>
+        <div className="legend-item">
+          <div className="color-box" style={{ backgroundColor: '#fecaca' }}></div>
+          <span>No Waste Management</span>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <div className="map-container" onMouseMove={handleMouseMove}>
+      <div className="map-header">
+        <button 
+          className="filter-toggle"
+          onClick={handleToggleFilters}
+        >
+          {showFilters ? 'Hide Filters' : 'Show Filters'}
+        </button>
+        <h1>Digital Mapping of Dhaka City Roads</h1>
+      </div>
+      {showFilters && (
+        <div className="filter-options">
+          <div className="filter-group">
+            <div className="filter-option">
+              <label>
+                <input
+                  type="checkbox"
+                  checked={activeFilter === 'roadType'}
+                  onChange={() => handleFilterChange('roadType')}
+                />
+                Road Type
+              </label>
+              {renderRoadTypeLegend()}
+            </div>
+            <div className="filter-option">
+              <label>
+                <input
+                  type="checkbox"
+                  checked={activeFilter === 'wasteManagement'}
+                  onChange={() => handleFilterChange('wasteManagement')}
+                />
+                Waste Management
+              </label>
+              {renderWasteManagementLegend()}
+            </div>
+          </div>
+        </div>
+      )}
       <MapContainer
-        center={[23.798398, 90.363195]} // Center on Mirpur
-        zoom={15}
+        center={[23.79792849754905, 90.36397682625856]}
+        zoom={18}
         style={{ height: '100vh', width: '100%' }}
       >
-        {/* Minimal map style with reduced opacity */}
         <TileLayer
           url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
-          opacity={0.9} // Make the base map more transparent
+          opacity={0.9}
         />
         {geoData && (
           <GeoJSON
             data={geoData}
-            style={style}
+            style={getStyle}
             onEachFeature={(feature, layer) => {
               layer.on({
                 click: () => handleRoadClick(feature),

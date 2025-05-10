@@ -17,84 +17,244 @@ html, body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.map-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.map-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #1a1a1a;
+}
+
+.filter-toggle {
+  padding: 0.5rem 1rem;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+
+.filter-toggle:hover {
+  background: #1d4ed8;
+}
+
+.filter-options {
+  position: absolute;
+  top: 4rem;
+  left: 4rem;
+  width: 300px;
+  background: white;
+  padding: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  text-align: left;
+}
+
+.filter-group {
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.filter-option {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+}
+
+.filter-option:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.filter-option label {
+  display: block;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  color: #1f2937;
+  font-weight: 500;
+  text-align: left;
+}
+
+.filter-option input[type="checkbox"] {
+  margin-right: 0.5rem;
+}
+
+.legend-content {
+  margin-top: 0.75rem;
+  padding-left: 1.5rem;
+  text-align: left;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  margin: 0.5rem 0;
+  text-align: left;
+}
+
+.color-box {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  margin-right: 0.75rem;
+  border: 1px solid #e5e7eb;
+  flex-shrink: 0;
+}
+
+.legend-item span {
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+.close-filters {
+  padding: 0.5rem 1rem;
+  background: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+  width: 100%;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.close-filters:hover {
+  background: #dc2626;
+}
+
+/* Override Leaflet's default zoom control position */
+.leaflet-control-zoom {
+  margin-top: 5rem !important;
+  margin-left: 1rem !important;
+}
+
+.leaflet-control-zoom a {
+  width: 30px !important;
+  height: 30px !important;
+  line-height: 30px !important;
 }
 
 .road-details-panel {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 280px;
-  height: 100%;
-  background-color: white;
-  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
-  padding: 15px;
-  overflow-y: auto;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   z-index: 1000;
+  width: 320px;
+  max-height: calc(100vh - 2rem);
+  overflow-y: auto;
+  border: 1px solid #e5e7eb;
+}
+
+.road-details-panel h2 {
+  color: #1e40af;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #e5e7eb;
 }
 
 .close-button {
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #6b7280;
   width: 24px;
   height: 24px;
-  border: none;
-  background: none;
-  font-size: 20px;
-  color: #666;
-  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
-  transition: background-color 0.2s;
-  z-index: 1001;
+  border-radius: 4px;
+  transition: all 0.2s;
 }
 
 .close-button:hover {
-  background-color: #f0f0f0;
-  color: #333;
-}
-
-.road-details-panel h2 {
-  padding-left: 30px;
-  color: #2563eb;
-  margin-bottom: 15px;
-  padding-bottom: 8px;
-  border-bottom: 2px solid #e5e7eb;
-  font-size: 1.2em;
+  background-color: #f3f4f6;
+  color: #1e40af;
 }
 
 .road-info {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.road-info h3 {
-  color: #1e40af;
-  margin-bottom: 15px;
+  margin-top: 0.5rem;
 }
 
 .info-group {
+  margin-bottom: 1.5rem;
   background-color: #f8fafc;
-  padding: 10px;
+  padding: 1rem;
   border-radius: 6px;
   border: 1px solid #e5e7eb;
 }
 
+.info-group:last-child {
+  margin-bottom: 0;
+}
+
 .info-group h4 {
+  margin: 0 0 0.75rem 0;
   color: #1e40af;
-  margin-bottom: 6px;
-  font-size: 0.95em;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
 }
 
 .info-group p {
-  margin: 3px 0;
+  margin: 0.5rem 0;
   color: #4b5563;
-  font-size: 0.9em;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+}
+
+.info-group p:before {
+  content: "•";
+  color: #2563eb;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.road-id-tooltip {
+  position: fixed;
+  background-color: #e5e7eb;
+  color:#1a1a1a;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  pointer-events: none;
 }
 
 /* Scrollbar styling */
@@ -104,6 +264,7 @@ html, body {
 
 .road-details-panel::-webkit-scrollbar-track {
   background: #f1f1f1;
+  border-radius: 3px;
 }
 
 .road-details-panel::-webkit-scrollbar-thumb {
@@ -115,16 +276,41 @@ html, body {
   background: #1e40af;
 }
 
-.road-id-tooltip {
-  position: fixed;
-  background: rgba(0, 0, 0, 0.8);
-  color: white;
-  padding: 3px 6px;
-  border-radius: 3px;
-  font-size: 12px;
-  pointer-events: none;
+.color-legend {
+  position: absolute;
+  top: 5rem;
+  left: 1rem;
+  background: white;
+  padding: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   z-index: 1000;
-  white-space: nowrap;
-  transform: translate(-50%, 0);
-  margin-top: 5px;
+  min-width: 200px;
+}
+
+.color-legend h3 {
+  margin: 0 0 0.75rem 0;
+  font-size: 1rem;
+  color: #4b5563;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 0.5rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  margin: 0.5rem 0;
+}
+
+.color-box {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  margin-right: 0.75rem;
+  border: 1px solid #e5e7eb;
+}
+
+.legend-item span {
+  font-size: 0.9rem;
+  color: #1f2937;
 } 

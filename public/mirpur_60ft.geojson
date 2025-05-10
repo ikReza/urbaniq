@@ -7,7 +7,7 @@
         "type": "Feature",
         "properties": {
           "id": "road_001",
-          "road_width": {"actual": 6.5, "effective": 6.3, "type": "rigid"},
+          "road_width": {"actual": 6.5, "effective": 6.3, "type": "flexible"},
           "footpath_width": { "actual": 2.0, "effective": 1.8 },
           "street_lights": { "actual": 10, "functional": 9 },
           "drainage": { "present": true, "type": "u-drain" },
@@ -268,7 +268,7 @@
         "type": "Feature",
         "properties": {
           "id": "road_011",
-          "road_width": {"actual": 6.5, "effective": 6.3, "type": "rigid"},
+          "road_width": {"actual": 6.5, "effective": 6.3, "type": "flexible"},
           "footpath_width": "none",
           "street_lights": { "actual": 10, "functional": 8 },
           "drainage": { "present": true, "type": "u-drain" },
@@ -526,7 +526,7 @@
         "type": "Feature",
         "properties": {
           "id": "road_021",
-          "road_width": {"actual": 6.5, "effective": 6.3, "type": "rigid"},
+          "road_width": {"actual": 6.5, "effective": 6.3, "type": "flexible"},
           "footpath_width": { "actual": 2.3, "effective": 2.1 },
           "street_lights": { "actual": 20, "functional": 19 },
           "drainage": { "present": true, "type": "both" },
